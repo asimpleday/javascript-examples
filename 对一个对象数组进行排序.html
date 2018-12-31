@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var users = [
+        {username: 'tom', age: 24},
+        {username: 'jack', age: 28},
+        {username: 'alice', age: 21}
+    ];
+    function createComparisonFunction (propertyName) {
+        return function (object1, object2) {
+            var value1 = object1[propertyName];
+            var value2 = object2[propertyName];
+            return value1 - value2;
+        }
+    }
+    users.sort(createComparisonFunction('age'));
+    console.log(users);
+</script>
+</body>
+</html>
